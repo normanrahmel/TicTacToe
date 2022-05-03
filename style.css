@@ -5,6 +5,32 @@
     height: 100vh;
 }
 
+.player {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.player img {
+    height: 60px;
+    width: 60px;
+    margin-right: 16px;
+}
+
+.player div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    margin-left: 32px;
+    margin-top: 64px;
+}
+
+.playerInactive {
+    opacity: 0.4;
+}
+
 tr {
     width: 399px;
 }
