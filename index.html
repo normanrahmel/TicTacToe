@@ -5,84 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+
+    <link rel="icon" type="image/png" href="img/icons/favicon.png">
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <title>TicTacToe</title>
 </head>
 
-<body>
-    <div class="player">
-        <div class="playerInactive" id="player1">
-            <img src="img/circle.png"> Player 1
-        </div>
-        <div class="" id="player2">
-            <img src="img/cross.png"> Player 2
-        </div>
-    </div>
-    <!--Horizontal-->
-    <div class="horizontalLine" style="top: 370px;"></div>
-    <div class="horizontalLine" style="top: 510px;"></div>
-    <div class="horizontalLine" style="top: 650px;"></div>
-    <!--Vertikal-->
-    <div class="horizontalLine makeVertical" style="top: 510px; left: 545px;"></div>
-    <div class="horizontalLine makeVertical" style="top: 510px; left: 685px;"></div>
-    <div class="horizontalLine makeVertical" style="top: 510px; left: 410px;"></div>
-    <!--Schräge-->
-    <div class="winnerOblique" style="top: 510px; left: 525px; transform: rotate(45deg);"></div>
-    <div class="winnerOblique" style="top: 510px; left: 525px; transform: rotate(-45deg);"></div>
-
-
-    <div class="containerContent">
-        <table>
-            <tr>
-                <td onclick="fillShape(0)">
-                    <img id="circle-0" class="shape d-none" src="img/circle.png">
-                    <img id="cross-0" class="shape d-none" src="img/cross.png">
-                </td>
-                <td onclick="fillShape(1)">
-                    <img id="circle-1" class="shape d-none" src="img/circle.png">
-                    <img id="cross-1" class="shape d-none" src="img/cross.png">
-                </td>
-                <td onclick="fillShape(2)">
-                    <img id="circle-2" class="shape d-none" src="img/circle.png">
-                    <img id="cross-2" class="shape d-none" src="img/cross.png">
-                </td>
-            </tr>
-
-            <tr>
-                <td onclick="fillShape(3)">
-                    <img id="circle-3" class="shape d-none" src="img/circle.png">
-                    <img id="cross-3" class="shape d-none" src="img/cross.png">
-                </td>
-                <td onclick="fillShape(4)">
-                    <img id="circle-4" class="shape d-none" src="img/circle.png">
-                    <img id="cross-4" class="shape d-none" src="img/cross.png">
-                </td>
-                <td onclick="fillShape(5)">
-                    <img id="circle-5" class="shape d-none" src="img/circle.png">
-                    <img id="cross-5" class="shape d-none" src="img/cross.png">
-                </td>
-            </tr>
-
-            <tr>
-                <td onclick="fillShape(6)">
-                    <img id="circle-6" class="shape d-none" src="img/circle.png">
-                    <img id="cross-6" class="shape d-none" src="img/cross.png">
-                </td>
-                <td onclick="fillShape(7)">
-                    <img id="circle-7" class="shape d-none" src="img/circle.png">
-                    <img id="cross-7" class="shape d-none" src="img/cross.png">
-                </td>
-                <td onclick="fillShape(8)">
-                    <img id="circle-8" class="shape d-none" src="img/circle.png">
-                    <img id="cross-8" class="shape d-none" src="img/cross.png">
-                </td>
-            </tr>
-        </table>
-    </div>
+<body onload="loadGame()">
     <div>
-        <button>Restart-Game</button>
+        <h1>TicTacToe</h1>
     </div>
+    <div class="player-panel">
+        <div>
+            <img src="img/circle.png" id="player-1">Player 1
+        </div>
+        <div>
+            <img src="img/cross.png" class="player-inactive" id="player-2">Player 2
+        </div>
+    </div>
+    <div class="dialog-bg d-none" id="dialog-bg">
+        <div class="dialog">
+            <div class="game-over" id="game-over-text"></div>
+            <button class="restart-btn" id="restart-btn" onclick="restart()">Restart</button>
+        </div>
+    </div>
+    <div class="table" id="table-container"></div>
 </body>
 
 </html>
